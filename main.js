@@ -298,9 +298,9 @@ vertex3d.prototype = {
 			this.charsMap["_"][i] = {theta:0, phi:0};
 		};
 		
-		this.veticies = new Array();
+		this.vertices = new Array();
 		for(var i=0; i<this.particleNum; i++) {
-			this.veticies[i] = new vertex3d({});
+			this.vertices[i] = new vertex3d({});
 		};
 	};
 	sphere.prototype = {
@@ -329,38 +329,38 @@ vertex3d.prototype = {
 				} else {
 					var getPosition = polarToRectangle(this.degree[i].theta+90, this.degree[i].phi, this.radius);
 				};
-				this.veticies[i].affineIn.vertex = {
+				this.vertices[i].affineIn.vertex = {
 					x:getPosition.x,
 					y:getPosition.y,
 					z:getPosition.z
 				};
 				this.center.x
-				this.veticies[i].affineIn.position = {
+				this.vertices[i].affineIn.position = {
 					x:this.center.x,
 					y:this.center.y,
 					z:this.center.z
 				};
-				this.veticies[i].vertexUpdate();
+				this.vertices[i].vertexUpdate();
 			};
 		},
 		draw : function() {
 			if(this.flag == true) {
 				ctx.beginPath();
-				for(var i=0; i<this.veticies.length; i++) {
-					for(var j=i; j<this.veticies.length; j++) {
+				for(var i=0; i<this.vertices.length; i++) {
+					for(var j=i; j<this.vertices.length; j++) {
 						
 						var distance = 
-						(this.veticies[i].affineOut.x-this.veticies[j].affineOut.x)*(this.veticies[i].affineOut.x-this.veticies[j].affineOut.x) +
-						(this.veticies[i].affineOut.y-this.veticies[j].affineOut.y)*(this.veticies[i].affineOut.y-this.veticies[j].affineOut.y);
+						(this.vertices[i].affineOut.x-this.vertices[j].affineOut.x)*(this.vertices[i].affineOut.x-this.vertices[j].affineOut.x) +
+						(this.vertices[i].affineOut.y-this.vertices[j].affineOut.y)*(this.vertices[i].affineOut.y-this.vertices[j].affineOut.y);
 						
 						if(distance <= this.radius*3) {
 							ctx.moveTo(
-								this.veticies[i].affineOut.x,
-								this.veticies[i].affineOut.y
+								this.vertices[i].affineOut.x,
+								this.vertices[i].affineOut.y
 							);
 							ctx.lineTo(
-								this.veticies[j].affineOut.x,
-								this.veticies[j].affineOut.y
+								this.vertices[j].affineOut.x,
+								this.vertices[j].affineOut.y
 							);
 						};
 					};
