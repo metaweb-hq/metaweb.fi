@@ -41,7 +41,7 @@ body {
     }
     #canvas {
         position: relative;
-        height: 87vh;
+        height: 85vh;
         width: 100vw;
     }
 }
