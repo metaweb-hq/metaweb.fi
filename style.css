@@ -18,8 +18,7 @@ body {
 }
 
 #content {
-    margin-top: 10em;
-    margin-left:25vw;
+    margin-left: 30vw;
 }
 
 .section {
@@ -39,9 +38,10 @@ body {
 @media only screen and (max-width:768px) {
     #content {
         margin-left: 5vw;
-        margin-top: 1em;
     }
     #canvas {
         position: relative;
+        height: 87vh;
+        width: 100vw;
     }
 }
