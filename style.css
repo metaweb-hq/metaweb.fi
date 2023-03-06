@@ -26,8 +26,17 @@ body {
     margin-top: 2em;
 }
 
+@media only screen and (min-width:768px) {
+    #content {
+        margin-top: 30em
+    }
+}
 @media only screen and (max-width:768px) {
     #content {
         margin-left: 5vw;
+        margin-top: 1em;
+    }
+    #canvas {
+        position: relative;
     }
 }
