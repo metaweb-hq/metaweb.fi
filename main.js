@@ -565,3 +565,10 @@ var textSet = [
     {text:"IS_HERE", sphereRadius:120*WINDOW_SCALE, sphereSpace:70*WINDOW_SCALE, unitTime:120, time:2000},
     {text:"@@@", sphereRadius:60*WINDOW_SCALE + Math.random()*60*WINDOW_SCALE, sphereSpace:200, unitTime:100, time:4000},
 ];
+
+if (isMobile()) {
+	setTimeout(() => {
+		let firstText = document.querySelector("#content > div:nth-child(2)")
+		firstText.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "start" });
+	}, 5000);
+}
